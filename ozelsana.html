@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sana Özel Animasyon!</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fdf2f8; /* Açık pembe bir arka plan */
+            font-family: 'Arial', sans-serif;
+            overflow: hidden; /* Kenarlardan taşmayı gizlemek için */
+        }
+
+        h1 {
+            display: flex;
+            gap: 1rem; /* İki parça arasındaki boşluk */
+            color: #db2777; /* Tatlı bir koyu pembe */
+            font-size: 4rem;
+            text-align: center;
+        }
+
+        /* Soldan gelen parça */
+        .sol-parca {
+            opacity: 0;
+            transform: translateX(-100vw); /* Ekranın tamamen solundan başla */
+            animation: sekerekGelSol 2s ease-out forwards;
+        }
+
+        /* Sağdan gelen parça */
+        .sag-parca {
+            opacity: 0;
+            transform: translateX(100vw); /* Ekranın tamamen sağından başla */
+            animation: sekerekGelSag 2s ease-out forwards;
+        }
+
+        /* Sol animasyon: Gel, biraz aş, seker gibi geri dön */
+        @keyframes sekerekGelSol {
+            0% {
+                opacity: 0;
+                transform: translateX(-100vw);
+            }
+            60% { /* Ortayı biraz aş */
+                opacity: 1;
+                transform: translateX(20px);
+            }
+            80% { /* Biraz geri sek */
+                transform: translateX(-10px);
+            }
+            100% { /* Tam merkezde dur */
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Sağ animasyon: Gel, biraz aş, seker gibi geri dön */
+        @keyframes sekerekGelSag {
+            0% {
+                opacity: 0;
+                transform: translateX(100vw);
+            }
+            60% { /* Ortayı biraz aş */
+                opacity: 1;
+                transform: translateX(-20px);
+            }
+            80% { /* Biraz geri sek */
+                transform: translateX(10px);
+            }
+            100% { /* Tam merkezde dur */
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>
+        <span class="sol-parca">seni seviyorum</span>
+        <span class="sag-parca">miniiik ❤️</span>
+    </h1>
+
+</body>
+</html>
